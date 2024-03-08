@@ -1,5 +1,7 @@
 <img width="1212" alt="image" src="https://github.com/YarazethGarcia/Retail-Store-Analysis-SQL/assets/126752230/eee77007-68fa-49f0-ab4b-8e6910e49104">
+
 ##SCHEMA CREATION##
+
 #Regions Table
 CREATE TABLE `regions` (
   `region_id` int NOT NULL AUTO_INCREMENT,
@@ -7,6 +9,7 @@ CREATE TABLE `regions` (
   PRIMARY KEY (`region_id`),
   UNIQUE KEY `region_name` (`region_name`)
 );
+
 ##Countries Table
 CREATE TABLE `countries` 
  `country_id` int NOT NULL AUTO_INCREMENT,
