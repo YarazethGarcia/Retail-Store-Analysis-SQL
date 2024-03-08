@@ -2,7 +2,7 @@
 
 ##SCHEMA CREATION##
 
-#Regions Table
+#Regions Table#
 CREATE TABLE `regions` (
   `region_id` int NOT NULL AUTO_INCREMENT,
   `region_name` varchar(40) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE `regions` (
   UNIQUE KEY `region_name` (`region_name`)
 );
 
-##Countries Table
+##Countries Table#
 CREATE TABLE `countries` 
  `country_id` int NOT NULL AUTO_INCREMENT,
   `country_code` char(2) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE `countries`
   KEY `region_id` (`region_id`),
   CONSTRAINT `countries_ibfk_1` FOREIGN KEY (`region_id`) REFERENCES `regions` (`region_id`)
 );
-#Location Table
+#Location Table#
 CREATE TABLE `locations` (
   `location_id` int NOT NULL AUTO_INCREMENT,
   `location_code` char(4) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `locations` (
   CONSTRAINT `locations_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `countries` (`country_id`)
 );
 
-##Employees Table
+##Employees Table#
 CREATE TABLE `employees` (
   `employee_id` int NOT NULL AUTO_INCREMENT, `employee_code` int DEFAULT NULL,
   `first_name` varchar(40) NOT NULL, `last_name` varchar(40) NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE `employees` (
   REFERENCES `locations` (`location_id`)
 );
 
-##Dependents Table
+##Dependents Table#
 CREATE TABLE `dependents` (
   `dependent_id` int NOT NULL AUTO_INCREMENT,
   `dependent_code` int DEFAULT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `dependents` (
   CONSTRAINT `dependents_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`)
 );
 
-#Organization structure Table
+#Organization structure Table#
 CREATE TABLE `organization_structure` (
   `job_id` int NOT NULL AUTO_INCREMENT,
   `job_title` varchar(40) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE `organization_structure` (
   CONSTRAINT `organization_structure_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `departments` (`department_id`)
 );
 
-#Departments Table
+#Departments Table#
 CREATE TABLE `departments` (
   `department_id` int NOT NULL AUTO_INCREMENT,
   `department_name` varchar(40) NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE `departments` (
 
 ###IMPORTING AND CLEANING DATA###
 
-#Check duplicates 
+#Check duplicates#
 select ‘candidate keys’ 
 from ‘Table’ 
 group by ‘candidate keys’ 
